@@ -21,15 +21,10 @@ app.set("view engine", "handlebars");
 
 
 
-app.get("/", function (req, res) {
-    connection.query("SELECT * FROM burgers;", function (err, data) {
-        if (err) {
-            return res.status(500).end();
-        }
+var routes = require("./controllers/burgers_controller.js");
 
-        res.render("index", { burgers: data });
-    });
-});
+app.use(routes);
+
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function () {

@@ -1,0 +1,3 @@
+$("#burgerInput").on("click", function () {
+
+})
