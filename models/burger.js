@@ -4,10 +4,10 @@ var burger = {
     all: function (cb) {
         orm.selectAll("burgers", function (result) {
             cb(result);
-            console.log(result)
+            // console.log(result)
         })
     },
-    create: function (cb) {
+    create: function (burger, devoured, cb) {
         orm.insertOne("burgers", burger, devoured, cb, function (result) {
             cb(result);
         })
@@ -18,3 +18,4 @@ var burger = {
 }
 
 module.exports = burger;
+

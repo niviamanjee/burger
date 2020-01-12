@@ -1,6 +1,7 @@
 var connection = require("./connection.js");
 
 
+
 var orm = {
     selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM ";
@@ -11,10 +12,10 @@ var orm = {
 
     },
     insertOne: function (tableInput, burger, devoured, cb) {
-        var queryString = `INSERT INTO ${tableInput} SET ${[{ burger_name: burger, devoured: devoured }]} `;
-        connection.query(queryString, function (err, res) {
+        var queryString = `INSERT INTO ${tableInput} SET burger_name = ?, devoured = ? `;
+        connection.query(queryString, [burger, devoured], function (err, res) {
             if (err) throw err;
-            console.log(res)
+            // console.log(res)
             cb(res)
         })
 

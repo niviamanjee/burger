@@ -1,8 +1,34 @@
-<ul>
-    {{#each burgers}}
-    <li>
-        <p>{{this.id}}: {{this.burger_name}}</p>
-    </li>
-    <button class="devour">Devour It</button>
-    {{/each}}
-</ul>
+<div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto;">
+
+    <ul style="grid-column-start: 1;">
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <div>
+
+            <h2>Eat Da Burger</h2>
+            <li>
+                <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}: {{this.burger_name}}</p>
+                <button class="devour">Devour It</button>
+            </li>
+        </div>
+
+        {{/unless}}
+        {{/each}}
+    </ul>
+    <ul style=" grid-column-start: 2;">
+
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <div>
+
+            <h2>Ya Ate Da Burger</h2>
+            <li>
+                <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}:
+                    {{this.burger_name}}</p>
+                <button class="devour">Devour It</button>
+            </li>
+        </div>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
