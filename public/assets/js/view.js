@@ -17,7 +17,7 @@ $("#newBurger").on("click", function (event) {
             console.log("created new burger");
 
             // Reload the page to get the updated list
-            location.reload();
+            // location.reload();
         }
     );
 });
@@ -31,4 +31,13 @@ $(".devour").on("click", function (event) {
     event.preventDefault();
 
     console.log($(this))
+    var id = $(this).attr("data-id")
+    console.log("id clicked:", id)
+    $.ajax({
+        url: "/api/burgers/" + id,
+        method: "PUT"
+    }).then(function (db) {
+        location.reload()
+
+    })
 })

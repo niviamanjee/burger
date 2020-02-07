@@ -20,8 +20,9 @@ var orm = {
         })
 
     },
-    updateOne: function (tableInput, burger, devoured, id, cb) {
-        var queryString = `UPDATE ${tableInput} SET ${[{ burger_name: burger, devoured: devoured }]} WHERE id = ${id} `;
+    updateOne: function (tableInput, devoured, id, cb) {
+        var queryString = `UPDATE ${tableInput} SET devoured = ${devoured} WHERE id = ${id} `;
+        console.log(queryString)
         connection.query(queryString, function (err, res) {
             if (err) throw err;
             cb(res)

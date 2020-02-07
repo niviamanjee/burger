@@ -8,7 +8,7 @@
             <h2>Eat Da Burger</h2>
             <li>
                 <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}: {{this.burger_name}}</p>
-                <button class="devour">Devour It</button>
+                <button data-id={{this.id}} class="devour">Devour It</button>
             </li>
         </div>
 
@@ -25,7 +25,6 @@
             <li>
                 <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}:
                     {{this.burger_name}}</p>
-                <button class="devour">Devour It</button>
             </li>
         </div>
         {{/if}}
