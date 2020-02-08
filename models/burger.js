@@ -14,7 +14,10 @@ var burger = {
     },
     update: function (devoured, id, cb) {
         orm.updateOne("burgers", devoured, id, cb)
-    }
+    },
+    // delete: function (deleted, cb) {
+    //     orm.deleteOne("burgers", deleted, cb)
+    // }
 }
 
 module.exports = burger;
