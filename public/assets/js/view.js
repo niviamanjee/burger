@@ -41,3 +41,19 @@ $(".devour").on("click", function (event) {
 
     })
 })
+
+
+$(".delete").on("click", function (event) {
+    event.preventDefault();
+
+    console.log($(this))
+    var id = $(this).attr("data-id")
+    console.log("id clicked:", id)
+    $.ajax({
+        url: "/api/burgers/" + id,
+        method: "DELETE"
+    }).then(function (db) {
+        location.reload()
+
+    })
+})

@@ -15,9 +15,9 @@ var burger = {
     update: function (devoured, id, cb) {
         orm.updateOne("burgers", devoured, id, cb)
     },
-    // delete: function (deleted, cb) {
-    //     orm.deleteOne("burgers", deleted, cb)
-    // }
+    delete: function (id, cb) {
+        orm.deleteOne("burgers", id, cb)
+    }
 }
 
 module.exports = burger;

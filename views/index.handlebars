@@ -9,7 +9,7 @@
             <li>
                 <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}: {{this.burger_name}}</p>
                 <button data-id={{this.id}} class="devour">Devour It</button>
-                {{!-- <button data-id={{this.id}} class="delete">Remove Order</button> --}}
+                <button data-id={{this.id}} class="delete">Remove Order</button>
             </li>
         </div>
 
@@ -27,7 +27,7 @@
                 <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}:
                     {{this.burger_name}}</p>
             </li>
-            {{!-- <button data-id={{this.id}} class="delete">Remove Order</button> --}}
+            <button data-id={{this.id}} class="delete">Remove Order</button>
         </div>
         {{/if}}
         {{/each}}

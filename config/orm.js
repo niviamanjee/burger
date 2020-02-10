@@ -27,15 +27,15 @@ var orm = {
             if (err) throw err;
             cb(res)
         })
+    },
+    deleteOne: function (tableInput, id, cb) {
+        var queryString = `DELETE FROM ${tableInput} WHERE  id = ${id}`;
+        console.log(queryString)
+        connection.query(queryString, function (err, res) {
+            if (err) throw err;
+            cb(res)
+        })
     }
-    // deleteOne: function (tableInput, deleted, id, cb) {
-    //     var queryString = `DELETE FROM ${tableInput} SET deleted = ${deleted} WHERE  id = ${id}`;
-    //     console.log(queryString)
-    //     connection.query(queryString, function (err, res) {
-    //         if (err) throw err;
-    //         cb(res)
-    //     })
-    // }
 }
 
 module.exports = orm;

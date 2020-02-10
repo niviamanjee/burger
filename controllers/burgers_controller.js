@@ -27,9 +27,9 @@ router.put("/api/burgers/:id", function (req, res) {
     })
 })
 
-// router.delete("/api/burgers/:id", function (req, res) {
-//     burger.delete("true", req.params.id, function (result) {
-//         res.json({})
-//     })
-// })
+router.delete("/api/burgers/:id", function (req, res) {
+    burger.delete(req.params.id, function (result) {
+        res.json({ id: result.insertId })
+    })
+})
 module.exports = router;
