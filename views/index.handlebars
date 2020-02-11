@@ -1,15 +1,15 @@
 <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto;">
 
     <ul style="grid-column-start: 1;">
+        <h4> Eat Da Burger</h4>
         {{#each burgers}}
         {{#unless this.devoured}}
         <div>
 
-            <h2>Eat Da Burger</h2>
             <li>
                 <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}: {{this.burger_name}}</p>
                 <button data-id={{this.id}} class="devour">Devour It</button>
-                <button data-id={{this.id}} class="delete">Remove Order</button>
+                <button data-id={{this.id}} class="delete"><i class="material-icons">close</i></button>
             </li>
         </div>
 
@@ -18,16 +18,16 @@
     </ul>
     <ul style=" grid-column-start: 2;">
 
+        <h4>Ya Ate Da Burger</h4>
         {{#each burgers}}
         {{#if this.devoured}}
         <div>
 
-            <h2>Ya Ate Da Burger</h2>
             <li>
                 <p value="{{this.devoured}}" data-id="{{this.id}}">{{this.id}}:
                     {{this.burger_name}}</p>
             </li>
-            <button data-id={{this.id}} class="delete">Remove Order</button>
+            <button data-id={{this.id}} class="delete"><i class="material-icons">close</i></button>
         </div>
         {{/if}}
         {{/each}}
